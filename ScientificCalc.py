@@ -2,7 +2,6 @@ import math
 x = int(input('num1: '))
 y = int(input('num2: '))
 
-
 class Calc:
 	def __init__(self, x, y):
 		self.x = x
