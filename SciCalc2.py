@@ -29,17 +29,13 @@ def inputCheck(userChoice):
     elif userChoice == '-':
         print(num.subs())
     elif userChoice == 'p':
-        print(num.powerx())
-        print(num.powery())
+        print(num.power())
     elif userChoice == '/':
         print(num.divide())
     elif userChoice == 's':
-        print(num.x_root())
-        print(num.y_root())
+        print(num.sqrroot())
     elif userChoice == 'f':
-        print(num.x_fact())
-        print(num.y_root())
-   
+        print(num.fact())
 
 class Calc:
     def __init__(self, x, y):
@@ -50,32 +46,25 @@ class Calc:
         return ('%s + %s = %s' % (x, y, (self.x + self.y)))
 
     def multiple(self):
-        return ('%s * %s = %s' % (x, y, (self.x * self.y)))
+        result = round((self.x * self.y), 3)
+        return ('%s * %s = %s' % (x, y, result))
 
     def divide(self):
-        return (('%s / %s = %s' % (x, y, (self.x / self.y))))
+        result1 = round((self.x / self.y), 3)
+        result2 = round((self.y / self.x), 3)
+        return (('%s / %s = %s' % (x, y, result1))) + '\n' + (('%s / %s = %s' % (y, x, result2)))
 
     def subs(self):
         return ('%s - %s = %s' % (x, y, (self.x - self.y)))
     
-    def powerx(self):
-        return ('%s Power %s = %s'% (x, y,  (pow(self.x, self.y))))
-    
-    def powery(self):
-        return ('%s Power %s = %s'% (y, x,  (pow(self.y, self.x))))
-        
-    def x_root(self):
-        return ('Square Root of %s = %s'% (x, (math.sqrt(x))))
+    def power(self): 
+        return ('%s Power %s = %s'% (x, y,  (round(pow(self.x, self.y), 3)))) + '\n' + ('%s Power %s = %s'% (y, x,  (round(pow(self.y, self.x), 3))))
 
-    def y_root(self):
-        return ('Square Root of %s = %s'% (y, (math.sqrt(y))))
+    def sqrroot(self):
+        return ('Square Root of %s = %s'% (x, (round(math.sqrt(x), 3)))) + '\n' + ('Square Root of %s = %s'% (y, (round(math.sqrt(y), 3))))
 
-    def x_fact(self):
-        return ('Factorial of %s = %s'% (x, (math.factorial(x))))
-
-    def y_fact(self):
-        return ('Factorial of %s = %s'% (y, (math.factorial(y))))
-
+    def fact(self):
+        return ('Factorial of %s = %s'% (x, (math.factorial(x)))) + '\n' + ('Factorial of %s = %s'% (y, (math.factorial(y))))
 
 num = Calc(x, y)
 
