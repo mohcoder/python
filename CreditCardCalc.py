@@ -1,4 +1,4 @@
-balance = float(input('Enter the current balance on the credit card: $$ '))
+balance = float(input('Enter value of the payment by credit card: $$ '))
 interestRate= float(input('Enter the annual interest rate: % '))
 monthlyRate = float(input('Enter the minimum monthly payment rate: % '))
 monthlyPayment = float(input('Desired monthly payment: $$ '))
